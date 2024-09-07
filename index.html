@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Run</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <section class="hero-section">
+            <div class="header">
+                <div class="logo">
+                    <svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M359.8 368.7c-83.5 37-150 103.4-187.1 186.9-5.6 12.6 0.1 27.3 12.7 32.9 3.3 1.5 6.7 2.2 10.1 2.2 9.6 0 18.7-5.5 22.8-14.8 32.1-72.2 89.5-129.6 161.7-161.6 12.6-5.6 18.3-20.3 12.7-32.9-5.5-12.6-20.3-18.3-32.9-12.7z m214.6-108.5c7.2-11.8 11.6-25.5 11.6-40.3 0-42.8-34.7-77.4-77.4-77.4-42.8 0-77.4 34.7-77.4 77.4 0 14.8 4.4 28.6 11.6 40.3-216.7 31.9-383.5 219-383.5 444.4v54.1c0 13.8 11.2 25 25 25H933c13.8 0 25-11.2 25-25v-54.1c-0.1-225.4-167-412.4-383.6-444.4zM908 733.7H109.2v-29.1c0-220.2 179.2-399.3 399.4-399.3S908 484.4 908 704.6v29.1z m24.9 100.2H84.2c-13.8 0-25 11.2-25 25s11.2 25 25 25h848.7c13.8 0 25-11.2 25-25s-11.2-25-25-25z"
+                            fill="currentColor" />
+                    </svg>
+                    <h1>Kitchen Run</h1>
+                </div>
+                <nav class="navLinks">
+                    <ul>
+                        <a href="#">
+                            <li>Home</li>
+                        </a>
+                        <a href="#">
+                            <li>Favorite</li>
+                        </a>
+                    </ul>
+                </nav>
+                <div class="avatar">
+                    <img src="images/pexels-chrofit-the-man-to-call-2515393-5615665.jpg" alt="profile picture">
+                </div>
+            </div>
+            <div class="left_hero_content">
+                <div class="hero-content">
+                    <h1>
+                        Discover <span>Delicious Recipes</span> at Your Fingertips
+                    </h1>
+                    <p>
+                        Explore thousands of delicious recipes
+                    </p>
+                </div>
+                <form class="search-input-field" id="search-input-field">
+                    <div class="input_group">
+                        <img src="images/search-line.svg" alt="search icon">
+
+                        <input type="search" placeholder="Search for recipes e.g., chicken, vegan pasta..."
+                            class="hero-input" id="hero-input">
+
+                        <img src="images/Frame 10.svg" alt="">
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <p>Start Cooking</p>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="categories-container">
+                <div class="category active">
+                    <h1>All</h1>
+                    <hr>
+                </div>
+                <div class="category">
+                    <h1>Breakfast</h1>
+                    <hr>
+                </div>
+                <div class="category">
+                    <h1>Appetizers</h1>
+                    <hr>
+                </div>
+                <div class="category">
+                    <h1>Main Course</h1>
+                    <hr>
+                </div>
+                <div class="category">
+                    <h1>Dessert</h1>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="recipe_result-container">
+                <!-- 1st Card -->
+                <div class="recipe-card">
+                    <div class="recipe_card-image">
+                        <img src="images/pic 1 1.svg" alt="food picture">
+
+                        <div class="recipe-tags">
+                            <div class="tag">
+                                <p>African</p>
+                            </div>
+                            <div class="tag">
+                                <p>Vegan</p>
+                            </div>
+                            <div class="tag">
+                                <p>Soup</p>
+                            </div>
+                        </div>
+
+                        <div class="like-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="heart-line">
+                                    <path id="Vector"
+                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="recipe-details">
+                        <div class="recipe_informations">
+                            <div class="recipe_info-title">
+                                <h1>African Bean Soup</h1>
+                            </div>
+                            <div class="recipe_info-descr">
+                                <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
+                            </div>
+                        </div>
+                        <div class="view_recipe-button">
+                            <button>View recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2nd Card -->
+                <div class="recipe-card">
+                    <div class="recipe_card-image">
+                        <img src="images/pic 1 1.svg" alt="food picture">
+
+                        <div class="recipe-tags">
+                            <div class="tag">
+                                <p>African</p>
+                            </div>
+                            <div class="tag">
+                                <p>Vegan</p>
+                            </div>
+                            <div class="tag">
+                                <p>Soup</p>
+                            </div>
+                        </div>
+
+                        <div class="like-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="heart-line">
+                                    <path id="Vector"
+                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="recipe-details">
+                        <div class="recipe_informations">
+                            <div class="recipe_info-title">
+                                <h1>African Bean Soup</h1>
+                            </div>
+                            <div class="recipe_info-descr">
+                                <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
+                            </div>
+                        </div>
+                        <div class="view_recipe-button">
+                            <button>View recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3rd Card -->
+                <div class="recipe-card">
+                    <div class="recipe_card-image">
+                        <img src="images/pic 1 1.svg" alt="food picture">
+
+                        <div class="recipe-tags">
+                            <div class="tag">
+                                <p>African</p>
+                            </div>
+                            <div class="tag">
+                                <p>Vegan</p>
+                            </div>
+                            <div class="tag">
+                                <p>Soup</p>
+                            </div>
+                        </div>
+
+                        <div class="like-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="heart-line">
+                                    <path id="Vector"
+                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="recipe-details">
+                        <div class="recipe_informations">
+                            <div class="recipe_info-title">
+                                <h1>African Bean Soup</h1>
+                            </div>
+                            <div class="recipe_info-descr">
+                                <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
+                            </div>
+                        </div>
+                        <div class="view_recipe-button">
+                            <button>View recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4th Card -->
+                <div class="recipe-card">
+                    <div class="recipe_card-image">
+                        <img src="images/pic 1 1.svg" alt="food picture">
+
+                        <div class="recipe-tags">
+                            <div class="tag">
+                                <p>African</p>
+                            </div>
+                            <div class="tag">
+                                <p>Vegan</p>
+                            </div>
+                            <div class="tag">
+                                <p>Soup</p>
+                            </div>
+                        </div>
+
+                        <div class="like-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="heart-line">
+                                    <path id="Vector"
+                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="recipe-details">
+                        <div class="recipe_informations">
+                            <div class="recipe_info-title">
+                                <h1>African Bean Soup</h1>
+                            </div>
+                            <div class="recipe_info-descr">
+                                <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
+                            </div>
+                        </div>
+                        <div class="view_recipe-button">
+                            <button>View recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5th Card -->
+                <div class="recipe-card">
+                    <div class="recipe_card-image">
+                        <img src="images/pic 1 1.svg" alt="food picture">
+
+                        <div class="recipe-tags">
+                            <div class="tag">
+                                <p>African</p>
+                            </div>
+                            <div class="tag">
+                                <p>Vegan</p>
+                            </div>
+                            <div class="tag">
+                                <p>Soup</p>
+                            </div>
+                        </div>
+
+                        <div class="like-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="heart-line">
+                                    <path id="Vector"
+                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="recipe-details">
+                        <div class="recipe_informations">
+                            <div class="recipe_info-title">
+                                <h1>African Bean Soup</h1>
+                            </div>
+                            <div class="recipe_info-descr">
+                                <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
+                            </div>
+                        </div>
+                        <div class="view_recipe-button">
+                            <button>View recipe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
