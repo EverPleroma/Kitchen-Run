@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Run</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
@@ -48,10 +49,10 @@
                     <div class="input_group">
                         <img src="images/search-line.svg" alt="search icon">
 
-                        <input type="search" placeholder="Search for recipes e.g., chicken, vegan pasta..."
-                            class="hero-input" id="hero-input">
+                        <input type="search" placeholder="Search for recipes e.g. chicken..." class="hero-input"
+                            id="hero-input">
 
-                        <img src="images/Frame 10.svg" alt="">
+                        <img src="images/Frame 10.svg" alt="background image">
                     </div>
                     <button type="submit" class="submit-button">
                         <p>Start Cooking</p>
@@ -61,34 +62,35 @@
         </section>
 
         <section class="content-section">
-            <div class="categories-container">
-                <div class="category active">
+            <div class="categories-container" id="categories-container">
+                <div class="category active" data-action="all">
                     <h1>All</h1>
                     <hr>
                 </div>
-                <div class="category">
-                    <h1>Breakfast</h1>
-                    <hr>
-                </div>
-                <div class="category">
+                <div class="category" data-action="appetizers">
                     <h1>Appetizers</h1>
                     <hr>
                 </div>
-                <div class="category">
+                <div class="category" data-action="main course">
                     <h1>Main Course</h1>
                     <hr>
                 </div>
-                <div class="category">
+                <div class="category" data-action="dessert">
                     <h1>Dessert</h1>
                     <hr>
                 </div>
+                <div class="category" data-action="drink">
+                    <h1>Drink</h1>
+                    <hr>
+                </div>
+
             </div>
 
-            <div class="recipe_result-container">
+            <div class="recipe_result-container" id="recipe_result-container">
                 <!-- 1st Card -->
-                <div class="recipe-card">
+                <div class="recipe-card" id="recipe-card">
                     <div class="recipe_card-image">
-                        <img src="images/pic 1 1.svg" alt="food picture">
+                        <img src="images/new food.jpg" alt="food picture">
 
                         <div class="recipe-tags">
                             <div class="tag">
@@ -103,14 +105,7 @@
                         </div>
 
                         <div class="like-button">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="heart-line">
-                                    <path id="Vector"
-                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
-                                        fill="currentColor" />
-                                </g>
-                            </svg>
+                            <i class="fa-regular fa-heart" id="like-button"></i>
                         </div>
                     </div>
 
@@ -123,15 +118,40 @@
                                 <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
                             </div>
                         </div>
-                        <div class="view_recipe-button">
-                            <button>View recipe</button>
+                        <div class="recipe_card_bottom-container">
+                            <div class="recipe_card_bottomDetails">
+                                <div class="time_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.7922 4.92835L13.7729 3.94758L14.7274 4.90203L13.7466 5.8828C14.7157 7.09589 15.1836 8.63402 15.0541 10.1813C14.9246 11.7286 14.2076 13.1675 13.0503 14.2027C11.893 15.2378 10.3833 15.7905 8.83124 15.7473C7.27916 15.7041 5.80253 15.0682 4.70462 13.9703C3.60671 12.8724 2.97086 11.3958 2.92765 9.84371C2.88444 8.29163 3.43716 6.78191 4.47229 5.62462C5.50742 4.46733 6.94639 3.75031 8.49366 3.62082C10.0409 3.49133 11.5791 3.95921 12.7922 4.92835V4.92835ZM9 14.4C9.6205 14.4 10.2349 14.2777 10.8082 14.0403C11.3814 13.8028 11.9023 13.4548 12.3411 13.016C12.7798 12.5773 13.1279 12.0564 13.3653 11.4831C13.6028 10.9099 13.725 10.2954 13.725 9.67495C13.725 9.05445 13.6028 8.44003 13.3653 7.86677C13.1279 7.29351 12.7798 6.77263 12.3411 6.33387C11.9023 5.89511 11.3814 5.54707 10.8082 5.30962C10.2349 5.07217 9.6205 4.94995 9 4.94995C7.74686 4.94995 6.54503 5.44776 5.65892 6.33387C4.77281 7.21998 4.275 8.4218 4.275 9.67495C4.275 10.9281 4.77281 12.1299 5.65892 13.016C6.54503 13.9021 7.74686 14.4 9 14.4V14.4ZM8.325 6.29995H9.675V10.35H8.325V6.29995ZM6.3 1.57495H11.7V2.92495H6.3V1.57495Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <p>20mins</p>
+                                </div>
+                                <div class="calorie_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.7611 6.68668C11.7611 5.86814 12.8508 5.65083 13.1395 6.41763C13.839 8.26994 14.3481 9.92979 14.3481 10.8259C14.3481 12.1982 13.803 13.5142 12.8327 14.4846C11.8624 15.4549 10.5463 16 9.17407 16C7.80182 16 6.48577 15.4549 5.51545 14.4846C4.54512 13.5142 4 12.1982 4 10.8259C4 9.86356 4.58777 8.02055 5.36802 6.0006C6.37697 3.38459 6.88195 2.07659 7.50595 2.00622C7.70463 1.98345 7.92298 2.02381 8.10097 2.11694C8.65666 2.40669 8.65666 3.8337 8.65666 6.68668C8.65666 7.09835 8.8202 7.49317 9.11129 7.78427C9.40239 8.07536 9.79721 8.2389 10.2089 8.2389C10.6206 8.2389 11.0154 8.07536 11.3065 7.78427C11.5976 7.49317 11.7611 7.09835 11.7611 6.68668Z"
+                                            stroke="currentColor" />
+                                        <path
+                                            d="M8.13844 16.0008L7.86628 15.3209C7.63404 14.7421 7.55986 14.1119 7.65132 13.4949C7.74278 12.878 7.99661 12.2964 8.38679 11.8098C8.48112 11.6918 8.60078 11.5966 8.73692 11.5311C8.87306 11.4656 9.02219 11.4316 9.17325 11.4316C9.32431 11.4316 9.47343 11.4656 9.60957 11.5311C9.74572 11.5966 9.86538 11.6918 9.95971 11.8098C10.7524 12.8012 10.9511 14.1423 10.4802 15.3209L10.2081 16.0008"
+                                            stroke="currentColor" />
+                                    </svg>
+                                    <p>200 cal</p>
+                                </div>
+                            </div>
+
+                            <button><a href="#">View recipe</a></button>
+
                         </div>
                     </div>
                 </div>
                 <!-- 2nd Card -->
                 <div class="recipe-card">
                     <div class="recipe_card-image">
-                        <img src="images/pic 1 1.svg" alt="food picture">
+                        <img src="images/new food.jpg" alt="food picture">
 
                         <div class="recipe-tags">
                             <div class="tag">
@@ -146,14 +166,7 @@
                         </div>
 
                         <div class="like-button">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="heart-line">
-                                    <path id="Vector"
-                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
-                                        fill="currentColor" />
-                                </g>
-                            </svg>
+                            <i class="fa-regular fa-heart"></i>
                         </div>
                     </div>
 
@@ -166,15 +179,40 @@
                                 <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
                             </div>
                         </div>
-                        <div class="view_recipe-button">
+                        <div class="recipe_card_bottom-container">
+                            <div class="recipe_card_bottomDetails">
+                                <div class="time_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.7922 4.92835L13.7729 3.94758L14.7274 4.90203L13.7466 5.8828C14.7157 7.09589 15.1836 8.63402 15.0541 10.1813C14.9246 11.7286 14.2076 13.1675 13.0503 14.2027C11.893 15.2378 10.3833 15.7905 8.83124 15.7473C7.27916 15.7041 5.80253 15.0682 4.70462 13.9703C3.60671 12.8724 2.97086 11.3958 2.92765 9.84371C2.88444 8.29163 3.43716 6.78191 4.47229 5.62462C5.50742 4.46733 6.94639 3.75031 8.49366 3.62082C10.0409 3.49133 11.5791 3.95921 12.7922 4.92835V4.92835ZM9 14.4C9.6205 14.4 10.2349 14.2777 10.8082 14.0403C11.3814 13.8028 11.9023 13.4548 12.3411 13.016C12.7798 12.5773 13.1279 12.0564 13.3653 11.4831C13.6028 10.9099 13.725 10.2954 13.725 9.67495C13.725 9.05445 13.6028 8.44003 13.3653 7.86677C13.1279 7.29351 12.7798 6.77263 12.3411 6.33387C11.9023 5.89511 11.3814 5.54707 10.8082 5.30962C10.2349 5.07217 9.6205 4.94995 9 4.94995C7.74686 4.94995 6.54503 5.44776 5.65892 6.33387C4.77281 7.21998 4.275 8.4218 4.275 9.67495C4.275 10.9281 4.77281 12.1299 5.65892 13.016C6.54503 13.9021 7.74686 14.4 9 14.4V14.4ZM8.325 6.29995H9.675V10.35H8.325V6.29995ZM6.3 1.57495H11.7V2.92495H6.3V1.57495Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <p>20mins</p>
+                                </div>
+                                <div class="calorie_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.7611 6.68668C11.7611 5.86814 12.8508 5.65083 13.1395 6.41763C13.839 8.26994 14.3481 9.92979 14.3481 10.8259C14.3481 12.1982 13.803 13.5142 12.8327 14.4846C11.8624 15.4549 10.5463 16 9.17407 16C7.80182 16 6.48577 15.4549 5.51545 14.4846C4.54512 13.5142 4 12.1982 4 10.8259C4 9.86356 4.58777 8.02055 5.36802 6.0006C6.37697 3.38459 6.88195 2.07659 7.50595 2.00622C7.70463 1.98345 7.92298 2.02381 8.10097 2.11694C8.65666 2.40669 8.65666 3.8337 8.65666 6.68668C8.65666 7.09835 8.8202 7.49317 9.11129 7.78427C9.40239 8.07536 9.79721 8.2389 10.2089 8.2389C10.6206 8.2389 11.0154 8.07536 11.3065 7.78427C11.5976 7.49317 11.7611 7.09835 11.7611 6.68668Z"
+                                            stroke="currentColor" />
+                                        <path
+                                            d="M8.13844 16.0008L7.86628 15.3209C7.63404 14.7421 7.55986 14.1119 7.65132 13.4949C7.74278 12.878 7.99661 12.2964 8.38679 11.8098C8.48112 11.6918 8.60078 11.5966 8.73692 11.5311C8.87306 11.4656 9.02219 11.4316 9.17325 11.4316C9.32431 11.4316 9.47343 11.4656 9.60957 11.5311C9.74572 11.5966 9.86538 11.6918 9.95971 11.8098C10.7524 12.8012 10.9511 14.1423 10.4802 15.3209L10.2081 16.0008"
+                                            stroke="currentColor" />
+                                    </svg>
+                                    <p>20mins</p>
+                                </div>
+                            </div>
+
                             <button>View recipe</button>
+
                         </div>
                     </div>
                 </div>
                 <!-- 3rd Card -->
                 <div class="recipe-card">
                     <div class="recipe_card-image">
-                        <img src="images/pic 1 1.svg" alt="food picture">
+                        <img src="images/new food.jpg" alt="food picture">
 
                         <div class="recipe-tags">
                             <div class="tag">
@@ -189,14 +227,7 @@
                         </div>
 
                         <div class="like-button">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="heart-line">
-                                    <path id="Vector"
-                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
-                                        fill="currentColor" />
-                                </g>
-                            </svg>
+                            <i class="fa-regular fa-heart"></i>
                         </div>
                     </div>
 
@@ -209,15 +240,40 @@
                                 <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
                             </div>
                         </div>
-                        <div class="view_recipe-button">
+                        <div class="recipe_card_bottom-container">
+                            <div class="recipe_card_bottomDetails">
+                                <div class="time_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.7922 4.92835L13.7729 3.94758L14.7274 4.90203L13.7466 5.8828C14.7157 7.09589 15.1836 8.63402 15.0541 10.1813C14.9246 11.7286 14.2076 13.1675 13.0503 14.2027C11.893 15.2378 10.3833 15.7905 8.83124 15.7473C7.27916 15.7041 5.80253 15.0682 4.70462 13.9703C3.60671 12.8724 2.97086 11.3958 2.92765 9.84371C2.88444 8.29163 3.43716 6.78191 4.47229 5.62462C5.50742 4.46733 6.94639 3.75031 8.49366 3.62082C10.0409 3.49133 11.5791 3.95921 12.7922 4.92835V4.92835ZM9 14.4C9.6205 14.4 10.2349 14.2777 10.8082 14.0403C11.3814 13.8028 11.9023 13.4548 12.3411 13.016C12.7798 12.5773 13.1279 12.0564 13.3653 11.4831C13.6028 10.9099 13.725 10.2954 13.725 9.67495C13.725 9.05445 13.6028 8.44003 13.3653 7.86677C13.1279 7.29351 12.7798 6.77263 12.3411 6.33387C11.9023 5.89511 11.3814 5.54707 10.8082 5.30962C10.2349 5.07217 9.6205 4.94995 9 4.94995C7.74686 4.94995 6.54503 5.44776 5.65892 6.33387C4.77281 7.21998 4.275 8.4218 4.275 9.67495C4.275 10.9281 4.77281 12.1299 5.65892 13.016C6.54503 13.9021 7.74686 14.4 9 14.4V14.4ZM8.325 6.29995H9.675V10.35H8.325V6.29995ZM6.3 1.57495H11.7V2.92495H6.3V1.57495Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <p>20mins</p>
+                                </div>
+                                <div class="calorie_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.7611 6.68668C11.7611 5.86814 12.8508 5.65083 13.1395 6.41763C13.839 8.26994 14.3481 9.92979 14.3481 10.8259C14.3481 12.1982 13.803 13.5142 12.8327 14.4846C11.8624 15.4549 10.5463 16 9.17407 16C7.80182 16 6.48577 15.4549 5.51545 14.4846C4.54512 13.5142 4 12.1982 4 10.8259C4 9.86356 4.58777 8.02055 5.36802 6.0006C6.37697 3.38459 6.88195 2.07659 7.50595 2.00622C7.70463 1.98345 7.92298 2.02381 8.10097 2.11694C8.65666 2.40669 8.65666 3.8337 8.65666 6.68668C8.65666 7.09835 8.8202 7.49317 9.11129 7.78427C9.40239 8.07536 9.79721 8.2389 10.2089 8.2389C10.6206 8.2389 11.0154 8.07536 11.3065 7.78427C11.5976 7.49317 11.7611 7.09835 11.7611 6.68668Z"
+                                            stroke="currentColor" />
+                                        <path
+                                            d="M8.13844 16.0008L7.86628 15.3209C7.63404 14.7421 7.55986 14.1119 7.65132 13.4949C7.74278 12.878 7.99661 12.2964 8.38679 11.8098C8.48112 11.6918 8.60078 11.5966 8.73692 11.5311C8.87306 11.4656 9.02219 11.4316 9.17325 11.4316C9.32431 11.4316 9.47343 11.4656 9.60957 11.5311C9.74572 11.5966 9.86538 11.6918 9.95971 11.8098C10.7524 12.8012 10.9511 14.1423 10.4802 15.3209L10.2081 16.0008"
+                                            stroke="currentColor" />
+                                    </svg>
+                                    <p>20mins</p>
+                                </div>
+                            </div>
+
                             <button>View recipe</button>
+
                         </div>
                     </div>
                 </div>
                 <!-- 4th Card -->
                 <div class="recipe-card">
                     <div class="recipe_card-image">
-                        <img src="images/pic 1 1.svg" alt="food picture">
+                        <img src="images/new food.jpg" alt="food picture">
 
                         <div class="recipe-tags">
                             <div class="tag">
@@ -232,14 +288,7 @@
                         </div>
 
                         <div class="like-button">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="heart-line">
-                                    <path id="Vector"
-                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
-                                        fill="currentColor" />
-                                </g>
-                            </svg>
+                            <i class="fa-regular fa-heart"></i>
                         </div>
                     </div>
 
@@ -252,59 +301,73 @@
                                 <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
                             </div>
                         </div>
-                        <div class="view_recipe-button">
+                        <div class="recipe_card_bottom-container">
+                            <div class="recipe_card_bottomDetails">
+                                <div class="time_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.7922 4.92835L13.7729 3.94758L14.7274 4.90203L13.7466 5.8828C14.7157 7.09589 15.1836 8.63402 15.0541 10.1813C14.9246 11.7286 14.2076 13.1675 13.0503 14.2027C11.893 15.2378 10.3833 15.7905 8.83124 15.7473C7.27916 15.7041 5.80253 15.0682 4.70462 13.9703C3.60671 12.8724 2.97086 11.3958 2.92765 9.84371C2.88444 8.29163 3.43716 6.78191 4.47229 5.62462C5.50742 4.46733 6.94639 3.75031 8.49366 3.62082C10.0409 3.49133 11.5791 3.95921 12.7922 4.92835V4.92835ZM9 14.4C9.6205 14.4 10.2349 14.2777 10.8082 14.0403C11.3814 13.8028 11.9023 13.4548 12.3411 13.016C12.7798 12.5773 13.1279 12.0564 13.3653 11.4831C13.6028 10.9099 13.725 10.2954 13.725 9.67495C13.725 9.05445 13.6028 8.44003 13.3653 7.86677C13.1279 7.29351 12.7798 6.77263 12.3411 6.33387C11.9023 5.89511 11.3814 5.54707 10.8082 5.30962C10.2349 5.07217 9.6205 4.94995 9 4.94995C7.74686 4.94995 6.54503 5.44776 5.65892 6.33387C4.77281 7.21998 4.275 8.4218 4.275 9.67495C4.275 10.9281 4.77281 12.1299 5.65892 13.016C6.54503 13.9021 7.74686 14.4 9 14.4V14.4ZM8.325 6.29995H9.675V10.35H8.325V6.29995ZM6.3 1.57495H11.7V2.92495H6.3V1.57495Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <p>20mins</p>
+                                </div>
+                                <div class="calorie_details">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.7611 6.68668C11.7611 5.86814 12.8508 5.65083 13.1395 6.41763C13.839 8.26994 14.3481 9.92979 14.3481 10.8259C14.3481 12.1982 13.803 13.5142 12.8327 14.4846C11.8624 15.4549 10.5463 16 9.17407 16C7.80182 16 6.48577 15.4549 5.51545 14.4846C4.54512 13.5142 4 12.1982 4 10.8259C4 9.86356 4.58777 8.02055 5.36802 6.0006C6.37697 3.38459 6.88195 2.07659 7.50595 2.00622C7.70463 1.98345 7.92298 2.02381 8.10097 2.11694C8.65666 2.40669 8.65666 3.8337 8.65666 6.68668C8.65666 7.09835 8.8202 7.49317 9.11129 7.78427C9.40239 8.07536 9.79721 8.2389 10.2089 8.2389C10.6206 8.2389 11.0154 8.07536 11.3065 7.78427C11.5976 7.49317 11.7611 7.09835 11.7611 6.68668Z"
+                                            stroke="currentColor" />
+                                        <path
+                                            d="M8.13844 16.0008L7.86628 15.3209C7.63404 14.7421 7.55986 14.1119 7.65132 13.4949C7.74278 12.878 7.99661 12.2964 8.38679 11.8098C8.48112 11.6918 8.60078 11.5966 8.73692 11.5311C8.87306 11.4656 9.02219 11.4316 9.17325 11.4316C9.32431 11.4316 9.47343 11.4656 9.60957 11.5311C9.74572 11.5966 9.86538 11.6918 9.95971 11.8098C10.7524 12.8012 10.9511 14.1423 10.4802 15.3209L10.2081 16.0008"
+                                            stroke="currentColor" />
+                                    </svg>
+                                    <p>20mins</p>
+                                </div>
+                            </div>
+
                             <button>View recipe</button>
+
                         </div>
                     </div>
                 </div>
-                <!-- 5th Card -->
-                <div class="recipe-card">
-                    <div class="recipe_card-image">
-                        <img src="images/pic 1 1.svg" alt="food picture">
 
-                        <div class="recipe-tags">
-                            <div class="tag">
-                                <p>African</p>
-                            </div>
-                            <div class="tag">
-                                <p>Vegan</p>
-                            </div>
-                            <div class="tag">
-                                <p>Soup</p>
-                            </div>
-                        </div>
-
-                        <div class="like-button">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="heart-line">
-                                    <path id="Vector"
-                                        d="M12.0009 5.27611C14.115 3.37801 17.382 3.44101 19.4187 5.48131C21.4545 7.52251 21.5247 10.7733 19.6311 12.8937L11.9991 20.5365L4.36891 12.8937C2.47531 10.7733 2.54641 7.51711 4.58131 5.48131C6.61981 3.44371 9.88051 3.37531 12.0009 5.27611V5.27611ZM18.1443 6.75301C16.7943 5.40121 14.6163 5.34631 13.2033 6.61531L12.0018 7.69351L10.7994 6.61621C9.38191 5.34541 7.20841 5.40121 5.85481 6.75481C4.51381 8.09581 4.44631 10.2423 5.68201 11.6607L12 17.9886L18.318 11.6616C19.5546 10.2423 19.4871 8.09851 18.1443 6.75301V6.75301Z"
-                                        fill="currentColor" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="recipe-details">
-                        <div class="recipe_informations">
-                            <div class="recipe_info-title">
-                                <h1>African Bean Soup</h1>
-                            </div>
-                            <div class="recipe_info-descr">
-                                <p>Meal made with kidney beans, plantain, okra, and hearty vegetables.</p>
-                            </div>
-                        </div>
-                        <div class="view_recipe-button">
-                            <button>View recipe</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
 </body>
+<footer>
+    <div class="footerWrapper">
+        <div class="top_container">
+
+            <div class="heading">
+                <h1>
+                    Get notified about new recipes weekly!
+                </h1>
+            </div>
+            <form class="footer-input-field" id="footer-input-field">
+                <div class="footer_input_group">
+                    <input type="search" placeholder="Enter your email" class="hero-input" id="hero-input">
+                </div>
+                <button type="submit" class="subscribe-botton">
+                    <p>Subscribe</p>
+                </button>
+            </form>
+
+        </div>
+        <hr class="footer-divider">
+        <div class="copyright">
+            <i class="fa-regular fa-copyright"></i>
+            <p>
+                designed and developed by EVERPLEROMA 2024
+            </p>
+        </div>
+        <div class="footer_image_container">
+            <img src="images/footer-img.svg" alt="footer image">
+        </div>
+    </div>
+</footer>
 
 </html>
