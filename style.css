@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
+:root {
+  --primary--base: #c73857;
+  --primary--light: #f5cbd4;
+  --primary--lighter: #faeff1;
+  --primary--darker: #641728;
+
+  --text--main--900: #0b0a14;
+  --text--sub--500: #535266;
+  --text--soft--400: #878698;
+  --text--white--0: #ffffff;
+
+  --grey--400: #98a2b3;
+  --grey--200: #e2e2e9;
+  --grey--100: #f6f6fa;
+
+  --icon--sub-500: #535266;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -67,7 +85,7 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
-  color: #faeff1;
+  color: var(--primary--lighter);
 }
 
 .navLinks {
@@ -85,11 +103,11 @@
 
 .navLinks a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text--white--0);
 }
 
 .navLinks li {
-  color: #faeff1;
+  color: var(--primary--lighter);
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
@@ -118,7 +136,7 @@
   justify-content: start;
   align-items: start;
   row-gap: 1.75rem;
-  color: #0b0a14;
+  color: var(--text--main--900);
 }
 
 .hero-content {
@@ -140,7 +158,7 @@
 }
 
 .hero-content h1 span {
-  color: #c73857;
+  color: var(--primary--base);
 }
 
 .hero-content p {
@@ -148,7 +166,7 @@
   font-weight: 400;
   line-height: 2.375rem;
   font-family: "Lora", serif;
-  color: #878698;
+  color: var(--text--soft--400);
 }
 
 .search-input-field {
@@ -165,7 +183,7 @@
   width: 100%;
   height: auto;
   padding: 0.5rem 0.5rem;
-  background-color: #fff;
+  background-color: var(--text--white--0);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: row;
@@ -188,7 +206,7 @@
 }
 
 .hero-input::placeholder {
-  color: #98a2b3;
+  color: var(--grey--400);
 }
 
 .submit-button {
@@ -197,8 +215,8 @@
   height: auto;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
-  background-color: #c73857;
-  color: #faeff1;
+  background-color: var(--primary--base);
+  color: var(--primary--lighter);
   border: transparent;
   outline: transparent;
   display: flex;
@@ -211,9 +229,9 @@
 }
 
 .submit-button:hover {
-  border: 1px solid #c73857;
+  border: 1px solid var(--primary--base);
   background-color: transparent;
-  color: #c73857;
+  color: var(--primary--base);
 }
 
 .content-section {
@@ -250,7 +268,7 @@
 }
 
 .category h1 {
-  color: #878698;
+  color: var(--text--soft--400);
   font-family: "Lora", serif;
   font-size: 2.25rem;
   font-weight: 400;
@@ -258,7 +276,7 @@
 }
 
 .active h1 {
-  color: #0b0a14;
+  color: var(--text--main--900);
   font-family: "Lora", serif;
   font-size: 2.25rem;
   font-weight: 400;
@@ -275,7 +293,7 @@
   width: 12px;
   height: 12px;
   border: none;
-  background-color: #0b0a14;
+  background-color: var(--text--main--900);
   border-radius: 100%;
   /* border-top: 2px solid #0b0a14; */
   visibility: visible;
@@ -297,7 +315,7 @@
 
 .recipe-card {
   height: auto;
-  border: 0.6px solid #e2e2e9;
+  border: 0.6px solid var(--grey--200);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
@@ -310,7 +328,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  background-color: #faeff1;
+  background-color: var(--primary--lighter);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
@@ -342,9 +360,9 @@
   height: auto;
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
-  background-color: #f5cbd4;
-  color: #641728;
-  border: 0.6px solid #641728;
+  background-color: var(--primary--light);
+  color: var(--primary--darker);
+  border: 0.6px solid var(--primary--darker);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -374,7 +392,7 @@
 
 .fa-solid {
   font-size: 1.25rem;
-  color: #c73857;
+  color: var(--primary--base);
 }
 
 /* .fa-solid .fa-heart {
@@ -409,7 +427,7 @@
 }
 
 .recipe_info-title h1 {
-  color: #0b0a14;
+  color: var(--text--main--900);
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.5rem;
@@ -417,7 +435,7 @@
 }
 
 .recipe_info-descr p {
-  color: #535266;
+  color: var(--text--sub--500);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
@@ -429,7 +447,7 @@
   width: 100%;
   height: auto;
   padding: 0.5rem 0rem;
-  border-top: 1px solid #f6f6fa;
+  border-top: 1px solid var(--grey--100);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -456,7 +474,7 @@
   justify-content: start;
   align-items: center;
   column-gap: 0.25rem;
-  color: #878698;
+  color: var(--text--soft--400);
 }
 
 .time_details p,
@@ -474,8 +492,8 @@
   height: auto;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
-  background-color: #c73857;
-  color: #faeff1;
+  background-color: var(--primary--base);
+  color: var(--primary--lighter);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -495,9 +513,9 @@
 }
 
 .recipe_card_bottom-container button:hover {
-  border: 1px solid #c73857;
+  border: 1px solid var(--primary--base);
   background-color: transparent;
-  color: #c73857;
+  color: var(--primary--base);
 }
 
 /* Footer */
@@ -514,7 +532,7 @@ footer {
   width: 100%;
   max-width: 2000px;
   height: auto;
-  background-color: #641728;
+  background-color: var(--primary--darker);
   padding: 2.5rem 5rem;
   display: flex;
   flex-direction: column;
@@ -542,7 +560,7 @@ footer {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2rem;
-  color: #faeff1;
+  color: var(--primary--lighter);
   font-family: "Lora", serif;
 }
 
@@ -560,7 +578,7 @@ footer {
   width: 100%;
   height: auto;
   padding: 0.5rem 0.5rem;
-  background-color: #fff;
+  background-color: var(--text--white--0);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: row;
@@ -575,8 +593,8 @@ footer {
   height: auto;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
-  background-color: #faeff1;
-  color: #c73857;
+  background-color: var(--text--white--0);
+  color: var(--primary--base);
   border: transparent;
   outline: transparent;
   display: flex;
@@ -606,11 +624,11 @@ footer {
 }
 
 .copyright i {
-  color: #f5cbd4;
+  color: var(--primary--light);
 }
 
 .copyright p {
-  color: #f5cbd4;
+  color: var(--primary--light);
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5rem;
