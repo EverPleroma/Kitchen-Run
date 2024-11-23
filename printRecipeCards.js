@@ -1,48 +1,64 @@
-function printRecipeCards(recipeArray, recipeContainer) {
+let menuTab = document.querySelectorAll(".menu_tab");
+const recipeContainer = document.getElementById("recipe_result-container");
+const heroSection = document.getElementById("left_hero_content");
+const categoryContainer = document.getElementById("categories-container");
+const categoryAndResultsContainer = document.getElementById(
+  "categories_and_searchResults"
+);
+let searchResults = document.querySelector(".search_Results");
+let searchResults_text = document.querySelector(".search_Results p");
+
+searchResults.style.display = "none";
+
+function printRecipeCards(recipeArray, queryInput) {
   recipeContainer.innerHTML = "";
   // console.log(recipeArray);
 
-  recipeArray.forEach((recipe, index) => {
-    let id = recipe.id;
+  recipeArray.forEach((recipe) => {
+    // let id = recipe.id;
     let title = recipe.title;
     let image = recipe.image;
     let cookingTime = recipe.readyInMinutes;
     let calories = recipe.nutrition.nutrients[0].amount.toFixed();
     let diet = recipe.diets[0];
     let cusine = recipe.cuisines[0];
-    let type = recipe.dishTypes[2];
+    let type = recipe.dishTypes[0];
     let recipeUrl = recipe.sourceUrl;
+    let summary = recipe.summary.replace(/<[^>]*>/g, "");
 
-    // let summary = recipe.summary;
-
-    // console.log(recipe);
+    searchResults_text.textContent = `${recipeArray.length} recipes found for '${queryInput}'`;
 
     let recipeCard = document.createElement("div");
     recipeCard.classList.add("recipe-card");
-    recipeCard.id = `${index}`;
-    let recipeID = Number(recipeCard.id);
 
     let recipeImageContainer = document.createElement("div");
     recipeImageContainer.classList.add("recipe_card-image");
-
-    let recipeImage = document.createElement("img");
-    recipeImage.src = image;
-    recipeImage.alt = title;
+    recipeImageContainer.style.background = `url(${image}) no-repeat center / cover`;
 
     let recipeTags = document.createElement("div");
     recipeTags.classList.add("recipe-tags");
 
-    let cuisineTag = document.createElement("tag");
+    let cuisineTag = document.createElement("div");
     cuisineTag.classList.add("tag");
     cuisineTag.textContent = `${cusine}`;
 
-    let dietTag = document.createElement("tag");
+    let dietTag = document.createElement("div");
     dietTag.classList.add("tag");
     dietTag.textContent = `${diet}`;
 
-    let typeTag = document.createElement("tag");
+    let typeTag = document.createElement("div");
     typeTag.classList.add("tag");
     typeTag.textContent = `${type}`;
+
+    if (cusine === undefined || null || "") {
+      cuisineTag.style.display = "none";
+    }
+    if (diet === undefined || null || "") {
+      dietTag.style.display = "none";
+    }
+    if (type === undefined || null || "") {
+      typeTag.style.display = "none";
+    }
 
     let likeContainer = document.createElement("div");
     likeContainer.classList.add("like-button");
@@ -51,8 +67,13 @@ function printRecipeCards(recipeArray, recipeContainer) {
     likeIcon.classList.add("fa-regular", "fa-heart");
     likeIcon.setAttribute("data-action", "like");
 
-    // let likedIcon = document.createElement("i");
-    // likedIcon.classList.add("fa-solid", "fa-heart");
+    const isFavourite = favouriteRecipes.some(
+      (favouriteRecipe) => favouriteRecipe.id === recipe.id
+    );
+    if (isFavourite) {
+      likeIcon.classList.remove("fa-regular");
+      likeIcon.classList.add("fa-solid");
+    }
 
     let recipeDetails = document.createElement("div");
     recipeDetails.classList.add("recipe-details");
@@ -70,7 +91,7 @@ function printRecipeCards(recipeArray, recipeContainer) {
     recipeDescrContainer.classList.add("recipe_info-descr");
 
     let recipeDscr = document.createElement("p");
-    recipeDscr.textContent = `Meal made with kidney beans, plantain, okra, and hearty vegetables.`;
+    recipeDscr.textContent = `${summary}`;
 
     let recipeCardBottomContainer = document.createElement("div");
     recipeCardBottomContainer.classList.add("recipe_card_bottom-container");
@@ -132,7 +153,7 @@ function printRecipeCards(recipeArray, recipeContainer) {
 
     likeContainer.append(likeIcon);
     recipeTags.append(cuisineTag, dietTag, typeTag);
-    recipeImageContainer.append(recipeImage, recipeTags, likeContainer);
+    recipeImageContainer.append(recipeTags, likeContainer);
     recipeCard.append(recipeImageContainer, recipeDetails);
 
     recipeContainer.append(recipeCard);
@@ -141,38 +162,77 @@ function printRecipeCards(recipeArray, recipeContainer) {
   });
 }
 
-let favoriteRecipes = [];
-// console.log(favoriteRecipes);
+// Array for favourite recipes
+
+let favouriteRecipes =
+  JSON.parse(localStorage.getItem("favouriteRecipes")) || [];
+console.log(favouriteRecipes);
+favouriteRecipes.reverse();
 
 function toggleLikeIcon(likeIcon, recipe) {
-  let favoriteLiteral = {
-    id: recipe.id,
-    title: recipe.title,
-  };
+  // let favoriteLiteral = {
+  //   id: recipe.id,
+  //   title: recipe.title,
+  // };
 
-  const recipeIndex = favoriteRecipes.findIndex(
+  // let recipeID = recipe.id
+
+  const recipeIndex = favouriteRecipes.findIndex(
     (likedrecipe) => likedrecipe.id === recipe.id
   );
 
-  console.log(favoriteRecipes);
-
   if (recipeIndex === -1) {
-    likeIcon.classList.toggle("fa-solid");
-    favoriteRecipes.push(favoriteLiteral);
-    localStorage.setItem("favoriteRecipes", JSON.stringify(favoriteRecipes));
+    // likeIcon.classList.toggle("fa-solid");
+    likeIcon.classList.remove("fa-regular");
+    likeIcon.classList.add("fa-solid");
+    favouriteRecipes.push(recipe);
+    localStorage.setItem("favouriteRecipes", JSON.stringify(favouriteRecipes));
   } else {
     likeIcon.classList.remove("fa-solid");
     likeIcon.classList.add("fa-regular");
-    favoriteRecipes.splice(recipeIndex, 1);
-    localStorage.setItem("favoriteRecipes", JSON.stringify(favoriteRecipes));
+    favouriteRecipes.splice(recipeIndex, 1);
+    localStorage.setItem("favouriteRecipes", JSON.stringify(favouriteRecipes));
   }
 }
 
-// function fetchRecipes() {
-//   if (localStorage.getItem("favoriteRecipes")) {
-//     favoriteRecipes = JSON.parse(localStorage.getItem("favoriteRecipes"));
-//   }
-// }
-// fetchRecipes();
+menuTab.forEach((nav) => {
+  nav.addEventListener("click", (e) => {
+    menuTab.forEach((navs) => {
+      navs.classList.remove("active");
+    });
+    nav.classList.add("active");
+    console.log(nav);
+    if (nav.id.includes("favourite")) {
+      printFavouriteRecipes(favouriteRecipes);
+    } else {
+      window.location.href = "/index.html";
+    }
+  });
+});
 
-export default printRecipeCards;
+function printFavouriteRecipes(favouriteRecipes) {
+  heroSection.style.display = "none";
+  categoryContainer.style.display = "none";
+  searchResults.style.display = "block";
+  searchResults_text.innerText = `${favouriteRecipes.length} recipes found for 'favourites'`;
+
+  if (
+    categoryAndResultsContainer.classList.contains(
+      "categories_and_searchResults"
+    )
+  ) {
+    categoryAndResultsContainer.classList.remove(
+      "categories_and_searchResults"
+    );
+    categoryAndResultsContainer.classList.add(
+      "categories_and_searchResults_normal"
+    );
+  }
+
+  if (favouriteRecipes.length > 0) {
+    printRecipeCards(favouriteRecipes, "favourites");
+  } else {
+    console.log("No favorite recipes found.");
+  }
+}
+export { printRecipeCards, printFavouriteRecipes, favouriteRecipes };

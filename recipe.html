@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recipe.css">
+    <title>Recipe</title>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <section class="header_section">
+            <div class="header">
+
+                <div class="logo_and_navs">
+                    <div class="logo">
+                        <svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M359.8 368.7c-83.5 37-150 103.4-187.1 186.9-5.6 12.6 0.1 27.3 12.7 32.9 3.3 1.5 6.7 2.2 10.1 2.2 9.6 0 18.7-5.5 22.8-14.8 32.1-72.2 89.5-129.6 161.7-161.6 12.6-5.6 18.3-20.3 12.7-32.9-5.5-12.6-20.3-18.3-32.9-12.7z m214.6-108.5c7.2-11.8 11.6-25.5 11.6-40.3 0-42.8-34.7-77.4-77.4-77.4-42.8 0-77.4 34.7-77.4 77.4 0 14.8 4.4 28.6 11.6 40.3-216.7 31.9-383.5 219-383.5 444.4v54.1c0 13.8 11.2 25 25 25H933c13.8 0 25-11.2 25-25v-54.1c-0.1-225.4-167-412.4-383.6-444.4zM908 733.7H109.2v-29.1c0-220.2 179.2-399.3 399.4-399.3S908 484.4 908 704.6v29.1z m24.9 100.2H84.2c-13.8 0-25 11.2-25 25s11.2 25 25 25h848.7c13.8 0 25-11.2 25-25s-11.2-25-25-25z"
+                                fill="currentColor" />
+                        </svg>
+                        <h1>Kitchen Run</h1>
+                    </div>
+                    <nav class="navLinks">
+                        <ul>
+                            <a href="index.html" class="menu_tab active" id="home-tab">
+                                <li>Home</li>
+                            </a>
+                            <a href="#" id="favourite-tab" class="menu_tab">
+                                <li>Favourite</li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+
+                <form class="search-input-field header_search" id="header_search-input-field">
+                    <div class="input_group">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.4279 16.1553L21.2826 20.0091L20.0091 21.2826L16.1553 17.4279C14.7214 18.5774 12.9378 19.2026 11.1 19.2C6.6288 19.2 3 15.5712 3 11.1C3 6.6288 6.6288 3 11.1 3C15.5712 3 19.2 6.6288 19.2 11.1C19.2026 12.9378 18.5774 14.7214 17.4279 16.1553ZM15.6225 15.4875C16.7647 14.3129 17.4026 12.7384 17.4 11.1C17.4 7.6188 14.5803 4.8 11.1 4.8C7.6188 4.8 4.8 7.6188 4.8 11.1C4.8 14.5803 7.6188 17.4 11.1 17.4C12.7384 17.4026 14.3129 16.7647 15.4875 15.6225L15.6225 15.4875V15.4875Z"
+                                fill="currentColor" />
+                        </svg>
+
+                        <input type="search" placeholder="Search recipes e.g. chicken..." class="hero-input"
+                            id="header-input">
+
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.2004 17.3996H13.8004V15.5996H10.2004V17.3996ZM3.90039 6.59961V8.39961H20.1004V6.59961H3.90039ZM6.60039 12.8996H17.4004V11.0996H6.60039V12.8996Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </form>
+
+                <div class="avatar">
+                    <img src="images/pexels-chrofit-the-man-to-call-2515393-5615665.jpg" alt="profile picture">
+                </div>
+            </div>
+        </section>
+
+        <section class="recipeImage-and-details">
+            <a href="index.html" class="back-and-icon-container">
+                <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+                </svg>
+                <h3>Back to recipes</h3>
+            </a>
+
+            <div class="recipeImage-and-recipeInfo-container" id="image-container">
+                <div class="recipeImage_container">
+                    <img src="/images/new food.jpg" alt="food picture">
+                </div>
+
+                <div class="recipeInfo_Details">
+
+                    <h1>Hot Chocolate Drink</h1>
+
+                    <div class="glance_info">
+                        <div class="glance_details">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.7922 4.92835L13.7729 3.94758L14.7274 4.90203L13.7466 5.8828C14.7157 7.09589 15.1836 8.63402 15.0541 10.1813C14.9246 11.7286 14.2076 13.1675 13.0503 14.2027C11.893 15.2378 10.3833 15.7905 8.83124 15.7473C7.27916 15.7041 5.80253 15.0682 4.70462 13.9703C3.60671 12.8724 2.97086 11.3958 2.92765 9.84371C2.88444 8.29163 3.43716 6.78191 4.47229 5.62462C5.50742 4.46733 6.94639 3.75031 8.49366 3.62082C10.0409 3.49133 11.5791 3.95921 12.7922 4.92835V4.92835ZM9 14.4C9.6205 14.4 10.2349 14.2777 10.8082 14.0403C11.3814 13.8028 11.9023 13.4548 12.3411 13.016C12.7798 12.5773 13.1279 12.0564 13.3653 11.4831C13.6028 10.9099 13.725 10.2954 13.725 9.67495C13.725 9.05445 13.6028 8.44003 13.3653 7.86677C13.1279 7.29351 12.7798 6.77263 12.3411 6.33387C11.9023 5.89511 11.3814 5.54707 10.8082 5.30962C10.2349 5.07217 9.6205 4.94995 9 4.94995C7.74686 4.94995 6.54503 5.44776 5.65892 6.33387C4.77281 7.21998 4.275 8.4218 4.275 9.67495C4.275 10.9281 4.77281 12.1299 5.65892 13.016C6.54503 13.9021 7.74686 14.4 9 14.4V14.4ZM8.325 6.29995H9.675V10.35H8.325V6.29995ZM6.3 1.57495H11.7V2.92495H6.3V1.57495Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <div class="glance_text">
+                                <p>Prep time: </p>
+                                <h3>20mins</h3>
+                            </div>
+
+                        </div>
+                        <div class="glance_details">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.7922 4.92835L13.7729 3.94758L14.7274 4.90203L13.7466 5.8828C14.7157 7.09589 15.1836 8.63402 15.0541 10.1813C14.9246 11.7286 14.2076 13.1675 13.0503 14.2027C11.893 15.2378 10.3833 15.7905 8.83124 15.7473C7.27916 15.7041 5.80253 15.0682 4.70462 13.9703C3.60671 12.8724 2.97086 11.3958 2.92765 9.84371C2.88444 8.29163 3.43716 6.78191 4.47229 5.62462C5.50742 4.46733 6.94639 3.75031 8.49366 3.62082C10.0409 3.49133 11.5791 3.95921 12.7922 4.92835V4.92835ZM9 14.4C9.6205 14.4 10.2349 14.2777 10.8082 14.0403C11.3814 13.8028 11.9023 13.4548 12.3411 13.016C12.7798 12.5773 13.1279 12.0564 13.3653 11.4831C13.6028 10.9099 13.725 10.2954 13.725 9.67495C13.725 9.05445 13.6028 8.44003 13.3653 7.86677C13.1279 7.29351 12.7798 6.77263 12.3411 6.33387C11.9023 5.89511 11.3814 5.54707 10.8082 5.30962C10.2349 5.07217 9.6205 4.94995 9 4.94995C7.74686 4.94995 6.54503 5.44776 5.65892 6.33387C4.77281 7.21998 4.275 8.4218 4.275 9.67495C4.275 10.9281 4.77281 12.1299 5.65892 13.016C6.54503 13.9021 7.74686 14.4 9 14.4V14.4ZM8.325 6.29995H9.675V10.35H8.325V6.29995ZM6.3 1.57495H11.7V2.92495H6.3V1.57495Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <div class="glance_text">
+                                <p>Serves:: </p>
+                                <h3>4</h3>
+                            </div>
+                        </div>
+                        <div class="glance_details">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.7611 6.68668C11.7611 5.86814 12.8508 5.65083 13.1395 6.41763C13.839 8.26994 14.3481 9.92979 14.3481 10.8259C14.3481 12.1982 13.803 13.5142 12.8327 14.4846C11.8624 15.4549 10.5463 16 9.17407 16C7.80182 16 6.48577 15.4549 5.51545 14.4846C4.54512 13.5142 4 12.1982 4 10.8259C4 9.86356 4.58777 8.02055 5.36802 6.0006C6.37697 3.38459 6.88195 2.07659 7.50595 2.00622C7.70463 1.98345 7.92298 2.02381 8.10097 2.11694C8.65666 2.40669 8.65666 3.8337 8.65666 6.68668C8.65666 7.09835 8.8202 7.49317 9.11129 7.78427C9.40239 8.07536 9.79721 8.2389 10.2089 8.2389C10.6206 8.2389 11.0154 8.07536 11.3065 7.78427C11.5976 7.49317 11.7611 7.09835 11.7611 6.68668Z"
+                                    stroke="currentColor" />
+                                <path
+                                    d="M8.13844 16.0008L7.86628 15.3209C7.63404 14.7421 7.55986 14.1119 7.65132 13.4949C7.74278 12.878 7.99661 12.2964 8.38679 11.8098C8.48112 11.6918 8.60078 11.5966 8.73692 11.5311C8.87306 11.4656 9.02219 11.4316 9.17325 11.4316C9.32431 11.4316 9.47343 11.4656 9.60957 11.5311C9.74572 11.5966 9.86538 11.6918 9.95971 11.8098C10.7524 12.8012 10.9511 14.1423 10.4802 15.3209L10.2081 16.0008"
+                                    stroke="currentColor" />
+                            </svg>
+                            <div class="glance_text">
+                                <p>Calories: </p>
+                                <h3>800 Kcal/serving</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="nutrition_facts">
+                        <h3>Nutritional Information</h3>
+                        <div class="nutrition_info">
+
+                            <div class="info_1">
+                                <p>Protein</p>
+                                <h1>8g</h1>
+                            </div>
+
+                            <div class="info_1">
+                                <p>Carbohydrate</p>
+                                <h1>67g</h1>
+                            </div>
+                            <div class="info_1">
+                                <p>Fat</p>
+                                <h1>6g</h1>
+                            </div>
+                            <div class="info_1">
+                                <p>Sugar</p>
+                                <h1>15g</h1>
+                            </div>
+                            <div class="info_1">
+                                <p>Fiber</p>
+                                <h1>4g</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipe_main_details">
+            <div class="recipe_description">
+                <h1>Description</h1>
+                <p>Nasi Goreng is the popular Indonesian fried rice which is traditionally served with a fried egg. I
+                    love the unique dark brown, caramelised colour of the rice! It’s a simple recipe, you won’t need to
+                    hunt down any unusual ingredients, and it’s one of my favourite Indonesian foods – and I’m betting
+                    you will love it too.</p>
+            </div>
+
+            <div class="recipe_ingredients">
+                <h1>Ingredients</h1>
+                <div class="ingredients">
+                    <div class="ingredient">
+                        <p>2 cups of milk</p>
+                    </div>
+                    <div class="ingredient">
+                        <p>1/2 cup of cocoa powder</p>
+                    </div>
+                    <div class="ingredient">
+                        <p>2 tablespoons of sugar (or to taste)</p>
+                    </div>
+                    <div class="ingredient">
+                        <p>1/2 teaspoon of vanilla extract</p>
+                    </div>
+                    <div class="ingredient">
+                        <p>A pinch of salt</p>
+                    </div>
+                    <div class="ingredient">
+                        <p>Whipped cream (optional)</p>
+                    </div>
+                    <div class="ingredient">
+                        <p>Grated chocolate (optional)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe_instructions">
+                <h1>Cooking Directions</h1>
+
+                <div class="instructions">
+                    <div class="instruction">
+                        <p>1.</p>
+                        <p>In a saucepan, heat the milk over medium heat until it begins to boil. Stir occasionally to
+                            prevent the milk from sticking to the bottom of the pan.
+                        </p>
+                    </div>
+                    <div class="instruction">
+                        <p>2.</p>
+                        <p>Add the cocoa powder, sugar, and salt to the hot milk. Stir well until the chocolate and
+                            sugar are completely dissolved.
+                        </p>
+                    </div>
+                    <div class="instruction">
+                        <p>3.</p>
+                        <p>Reduce the heat to medium-low and let the hot chocolate cook for another 2 to 3 minutes,
+                            stirring constantly. This will help slightly thicken the drink.
+                        </p>
+                    </div>
+                    <div class="instruction">
+                        <p>4.</p>
+                        <p>Remove the saucepan from the heat and add the vanilla extract. Mix well.
+                        </p>
+                    </div>
+                    <div class="instruction">
+                        <p>5.</p>
+                        <p>Pour the hot chocolate into cups or mugs. If desired, add whipped cream on top for decoration
+                            and sprinkle with grated chocolate.
+                        </p>
+                    </div>
+                    <div class="instruction">
+                        <p>6.</p>
+                        <p>Serve immediately and enjoy the delicious hot chocolate!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <footer>
+        <div class="footerWrapper">
+            <div class="top_container">
+
+                <div class="heading">
+                    <h1>
+                        Get notified about new recipes weekly!
+                    </h1>
+                </div>
+                <form class="footer-input-field" id="footer-input-field">
+                    <div class="footer_input_group">
+                        <input type="email" placeholder="Enter your email" id="hero-input">
+                    </div>
+                    <button type="submit" class="subscribe-botton">
+                        <p>Subscribe</p>
+                    </button>
+                </form>
+
+            </div>
+            <hr class="footer-divider">
+            <div class="copyright">
+                <i class="fa-regular fa-copyright"></i>
+                <p>
+                    designed and developed by EVERPLEROMA 2024
+                </p>
+            </div>
+            <div class="footer_image_container">
+                <img src="images/footer-img.svg" alt="footer image">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
